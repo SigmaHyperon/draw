@@ -1,9 +1,9 @@
 class draw {
-    var drawQueue = [];
-    var layers = [];
-    var context;
     constructor(selector) {
-        var canvas;
+        this.drawQueue = [];
+        this.layers = [];
+        this.context;
+        this.canvas;
         if(typeof $ == "undefined"){
             canvas = document.getElementById(selector);
         } else {
@@ -11,22 +11,22 @@ class draw {
         }
         this.context = canvas.getContext("2d");
     }
-    function draw(){
+    draw(){
         this.fillDrawQueue();
         for (var element in this.drawQueue) {
             element.draw(this.context);
         }
     }
-    function fillDrawQueue() {
+    fillDrawQueue() {
         for (var layer in this.layers) {
             this.drawQueue.push(...layer.getAsQueue());
         }
     }
-    function addLayer(){
+    addLayer(){
         this.layers.push(new Layer());
         return this.layers[this.layers.length-1];
     }
-    function getLayer(index){
+    getLayer(index){
         return this.layers[index];
     }
 }

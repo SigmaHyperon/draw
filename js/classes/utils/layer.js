@@ -1,12 +1,11 @@
 class Layer {
-    var elements = [];
     constructor() {
-
+        this.elements = [];
     }
-    function getAsQueue(){
+    getAsQueue(){
         return this.elements;
     }
-    function addElement(element){
+    addElement(element){
         if(element.prototype instanceof Drawable){
             this.elements.push(element);
         }

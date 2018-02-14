@@ -2,7 +2,7 @@ class Drawable {
     constructor() {
 
     }
-    function draw(target) {
+    draw(target) {
         
     }
 }
