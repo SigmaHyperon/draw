@@ -3,9 +3,9 @@ class Types {
 
     }
     static isType(object, type){
-        return object.constructor.name == type;
+        return object.constructor.name == type.name;
     }
     static isRecursiveType(object, type){
-        return object instanceof type 
+        return object instanceof type
     }
 }
